@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript" src="./underscore.js"></script>
+	<script type="text/javascript">
+		console.log(_)
+		// contains 该方法用于判定一个集合中是否包含一个指定的内容
+		var arr = [1, 2, 3, 4, 5, 6, 7, 8];
+		// 判定数组中是否包含“3”这个数字
+		var result = _.contains(arr, 3);
+		console.log(result);
+
+		// 1 定义两个模板字符串
+		var tpl1 = "<div><%=name%></div>";
+		var tpl2 = "<span><%=name%></span>";
+		// 2 根据这两个模板字符串 生成两个函数
+		var fmt1 = _.template(tpl1);
+		var fmt2 = _.template(tpl2);
+		// 3 调用一个函数 并传递字典 生成真正的HTML文案 因为调用的是fmt1函数 而fmt1函数又是根据tpl1生成的 所以最终格式化的时候 以tpl1去格式化
+		var result1 = fmt1({name: "小红"});
+		console.log(result1);
+		var result2 = fmt2({name: "小明"});
+		console.log(result2);
+	</script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+	</style>
+</head>
+<body>
+	<!-- 定义视图 -->
+	<div class="one" data-bind="obj"></div>
+	<div class="two" data-bind="obj1"></div>
+	<div class="three"></div>
+	<script type="text/javascript">
+		// 定义数据
+		var obj = {
+			width: 400,
+			height: 30,
+			backgroundColor: "red",
+			process: "40%",
+			color: "blue"
+		}
+		var obj1 = {
+			width: 1000,
+			height: 100,
+			backgroundColor: "green",
+			process: "90%",
+			color: "pink",
+			tabBar: true
+		}
+		// 实现VM对象
+		function VM() {
+			// 为了将具备data-bind自定义属性的元素挑选出来
+			// 先将所有的元素获取 挨个检查身上是否具备data-bind属性 如果有就放入一个数组 如果没有 就过滤掉
+			var all_elements = [].slice.call(document.getElementsByTagName("*"));
+			// 过滤 将具备data-bin属性的挑选出来
+			var target_elements = all_elements.filter(function(value) {
+				return value.getAttribute("data-bind");
+			});
+			// 循环将每一个元素与对应的数据获取
+			target_elements.forEach(function(value) {
+				var obj = new Function("return " + value.getAttribute("data-bind"))();
+				console.log(value, obj);
+				// 挨个设置每一条属性
+				value.style.width = obj["width"] + "px";
+				value.style.height = obj["height"] + "px";
+				value.style.backgroundColor = obj["backgroundColor"];
+				var child = document.createElement("p");
+				child.style.width = obj["process"];
+				child.style.height = "100%";
+				child.style.backgroundColor = obj["color"];
+				child.style.position = "relative";
+				value.appendChild(child);
+				// 判断是否具备tabBar属性
+				if (obj["tabBar"]) {
+					var bar = document.createElement("span");
+					bar.style.position = "absolute";
+					bar.style.width = "20px";
+					bar.style.height = "120%";
+					bar.style.backgroundColor = "gray";
+					bar.style.top = "-10%";
+					bar.style.right = "-10px";
+					bar.onmousedown = function(e) {
+						// 获取鼠标位置
+						var x = e.clientX;
+						// 获取进度的宽度
+						var width = child.offsetWidth;
+						// 为了移动范围更大 给document绑定mousemove事件
+						document.onmousemove = function(e) {
+							// 获取现在的鼠标位置
+							var nowX = e.clientX;
+							// 计算
+							var resultX = nowX - x + width;
+							if (resultX < 0) {
+								resultX = 0;
+							} else if (resultX > obj["width"]) {
+								resultX = obj["width"];
+							}
+							// 赋值
+							child.style.width = resultX + "px";
+						}
+					}
+					document.onmouseup = function() {
+						document.onmousemove = null;
+					}
+
+					child.appendChild(bar);
+				}
+			})
+		}
+		VM();
+	</script>
+</body>
+</html>
