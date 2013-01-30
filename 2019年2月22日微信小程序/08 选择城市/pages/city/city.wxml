@@ -1,0 +1,41 @@
+<view id="chooseCity">
+  <text>当前城市：</text><text>{{chooseCity}}</text>
+</view>
+<scroll-view style="height: {{height}}px" scroll-y scroll-into-view="{{type}}">
+  <!-- 热门城市 -->
+  <view id="hotCity">
+    <view class="title">
+      <text>热门城市</text>
+    </view>
+    <view class="hot-city-list">
+      <text data-city="{{item}}" catchtap="choose" class="cityName" wx:for="{{hotCity}}" wx:key="{{this}}" >{{item}}</text>
+    </view>
+  </view>
+  <!-- 历史记录 -->
+  <view id="history">
+    <view class="title">
+      <text>历史记录</text>
+    </view>
+    <view class="history-city-list">
+      <text data-city="{{item}}" catchtap="choose" class="cityName" wx:for="{{history}}" wx:key="{{this}}">{{item}}</text>
+    </view>
+  </view>
+  <!-- 所有城市 -->
+  <view id="allCity">
+    <!-- 根据字母顺序循环 -->
+    <view wx:for="{{cityList}}"  wx:key="{{this}}" class="{{item.initial}}">
+      <view id="{{item.initial}}">{{item.initial}}</view>
+      <!-- 循环该字母的所有城市 -->
+      <view data-city="{{value.city}}" catchtap="choose" wx:for="{{item.cityInfo}}" wx:key="{{this}}" wx:for-item="value" >
+       <text>{{value.city}}</text>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+
+<!-- 字母列表 -->
+<view id="searchLetter" catchtouchmove='scroll'>
+  <view wx:for="{{searchLetter}}" wx:key="{{this}}" style="line-height: {{height / searchLetter.length}}px; height: {{height / searchLetter.length}}px">
+    <text data-letter="{{item}}"  catchtap='chooseLetter'>{{item}}</text>
+  </view>
+</view>

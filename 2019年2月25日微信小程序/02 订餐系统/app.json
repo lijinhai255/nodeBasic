@@ -1,0 +1,37 @@
+{
+  "pages": [
+    "pages/deliver/deliver",
+    "pages/index/index",
+    "pages/list/list",
+    "pages/person/person"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#FF8800",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "爱创课堂",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "icons/discovery_normal.png",
+      "selectedIconPath": "icons/discovery_active.png"
+    },
+    {
+      "pagePath": "pages/list/list",
+      "text": "订单",
+      "iconPath": "icons/message_normal.png",
+      "selectedIconPath": "icons/message_active.png"
+    },
+    {
+      "pagePath": "pages/person/person",
+      "text": "个人",
+      "iconPath": "icons/person_normal.png",
+      "selectedIconPath": "icons/person_active.png"
+    }
+    ]
+  }
+}

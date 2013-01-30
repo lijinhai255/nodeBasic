@@ -1,0 +1,25 @@
+
+<!-- 导航 -->
+<div id="nav">
+	<div class="container">
+		<div class="row">
+			<!-- 用户信息模块 -->
+			<div class="user-info bg-primary">
+				<div class="username"><%=username%></div>
+				<div class="head-pic">
+					<a href="/cut"><img src="<%=head_pic%>" alt=""></a>
+				</div>
+				<div class="exit">
+					<a href="/exit">退出</a>
+				</div>
+			</div>
+			<!-- 面包屑导航 -->
+			<ol class="breadcrumb">
+			  <% for (var i = 0; i < navArr.length; i++) { %>
+			  <li><a href="<%=navArr[i].src%>"><%=navArr[i].name%></a></li>
+				<% } %> 
+			</ol>
+
+		</div>
+	</div>
+</div>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	<script type="text/javascript">
+		// 类数组对象：指的是像数组，具备下标属性值，具备length属性 但是没有数组方法的对象。
+		var lis = document.getElementsByTagName("li");
+		// 之前在将类数组对象转为数组时
+		var arr = [].slice.call(lis);
+		// 现在在ES6中 我们可以使用Array.from方法
+		var arr1 = Array.from(lis);
+		console.log(arr);
+		console.log(arr1);
+	</script>
+</body>
+</html>

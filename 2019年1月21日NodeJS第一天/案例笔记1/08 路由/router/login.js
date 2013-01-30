@@ -1,0 +1,4 @@
+function login(req, res) {
+	res.send("登陆成功121312321321333333333333333333333333333333333333333333333333");
+}
+module.exports = login;

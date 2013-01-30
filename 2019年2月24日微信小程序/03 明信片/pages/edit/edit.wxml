@@ -1,0 +1,35 @@
+<form bindsubmit='tijiao'>
+<view class="infos">
+  <view>
+    <label>姓名</label><input type="text" value="{{info.nickname}}" name="nickname" placeholder='请输入您的姓名'></input>
+  </view>
+  <view>
+    <label>手机</label><input type="number" value="{{info.phoneNumber}}" name="phoneNumber" placeholder='请输入您的手机号'></input>
+  </view>
+  <view>
+    <label>邮箱</label><input type="text" value="{{info.email}}" name="email" placeholder='请输入您的邮箱'></input>
+  </view>
+  <view>
+    <label>单位</label><input type="text" value="{{info.office}}" name="office" placeholder='请输入您的单位'></input>
+  </view>
+  <view>
+    <label>职位</label><input type="text" value="{{info.job}}" name="job" placeholder='请输入您的职位'></input>
+  </view>
+  <view>
+    <label>地址</label><input type="text" value="{{info.address}}" name="address" placeholder='请输入您的地址'></input>
+  </view>
+  <view>
+    <label>微博</label><input type="text"value="{{info.blog}}" name="blog" placeholder='请输入您的微博'></input>
+  </view>
+</view>
+
+<view class="self">
+  <view class="sign">
+    个性签名
+  </view>
+  <view class="intro">
+    <textarea name="intro" value="{{info.intro}}" placeholder='发名片'></textarea>
+  </view>
+</view>
+<button form-type='submit'>保存</button>
+</form>

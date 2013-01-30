@@ -1,0 +1,4 @@
+/* pages/text/text.wxss */
+.small {
+  font-size: 10px;
+}

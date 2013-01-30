@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/index.css">
+	<link rel="stylesheet" type="text/css" href="./css/common.css">
+</head>
+<body>
+	<div id="header">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 logo">
+					<img src="./imgs/logo.png" alt="">
+				</div>
+				<div class="col-lg-6 header-title">
+					<img src="./imgs/title.png" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="content">
+		<div class="container">
+			<div class="row">
+				<form id="loginForm" class="text-center hide">
+					<div class="title">用户登录</div>
+				  <div class="form-group">
+				    <label for="">用户名</label>
+				    <input type="text" class="form-control"  name="username" autocomplete="off"  placeholder="请输入用户名">
+				  </div>
+				  <div class="form-group">
+				    <label for="">密码</label>
+				    <input type="password" name="password" id="" class="form-control" placeholder="Password">
+				  </div>
+				  <div class="form-group">
+				  	<button type="button" id="loginFormBtn" class="btn btn-primary">提交</button>
+				  	<button type="button" class="btn btn-primary" id="goRegist">去注册</button>
+				  </div>
+				</form>
+				<form id="registForm" class="text-center">
+					<div class="title">用户注册</div>
+				  <div class="form-group">
+				    <label for="">用户名</label>
+				    <input type="text" class="form-control" name="username" id="registFormUsernameInp" autocomplete="off"  placeholder="请输入用户名">
+				  </div>
+				  <div class="form-group">
+				    <label for="">密码</label>
+				    <input type="password" name="password" id="registFormPasswordInp" class="form-control" placeholder="输入密码">
+				  </div>
+				  <div class="form-group">
+				    <label for="">重复密码</label>
+				    <input type="password" name="repassword" id="registFormPasswordInpRepeat" class="form-control" placeholder="重复输入密码">
+				  </div>
+				  <div class="form-group">
+				  	<button type="button" class="btn btn-primary" id="registFormBtn">提交</button>
+				  	<button type="button" class="btn btn-primary" id="goLogin">去登录</button>
+				  </div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div id="footer"></div>
+	
+
+	<div class="modal fade" id="tipModal" tabindex="-1" role="dialog">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h4 class="modal-title text-center">提示信息</h4>
+	      </div>
+	      <div class="modal-body">
+	        <p id="tipModalContent"></p>
+	      </div>
+	      <div class="modal-footer">
+	      </div>
+	    </div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+	
+	<script type="text/javascript" src="./sea.js"></script>
+	<script type="text/javascript" src="./js/seajs-css.js"></script>
+	<script type="text/javascript" src="./js/seajs-preload.js"></script>
+	<script type="text/javascript" src="./js/jquery.min.js"></script>
+	<script type="text/javascript" src="./js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		// 配置
+		seajs.use("./modules/index/index_main.js");
+	</script>
+</body>
+</html>

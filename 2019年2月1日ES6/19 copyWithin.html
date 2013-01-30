@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// 定义数组
+		var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+		// 实现copyWithin方法1
+		// Array.prototype.copyWithin = function(pos, start, end) {
+		// 	// 先从start截取到end
+		// 	var newArr = this.slice(start, end);
+		// 	// 备份原来的长度
+		// 	var length = this.length;
+		// 	// 再从数组的pos位置开始覆盖
+		// 	for (var i = 0; i < newArr.length; i++) {
+		// 		// 从数组的pos位置开始覆盖
+		// 		this[pos + i] = newArr[i];
+		// 	}
+		// 	// 还原长度
+		// 	this.length = length;
+		// 	return this;
+		// }
+
+		// 实现copyWithin方法2
+		Array.prototype.copyWithin = function(pos, start, end) {
+			// 截取
+			var newArr = this.slice(start, end);
+			var length = this.length;
+			// this.splice(pos, newArr.length, newArr)
+			this.splice.apply(this, [pos, newArr.length].concat(newArr));
+			this.length = length;
+			return this;
+		}
+
+		// 调用copyWithin方法 将 5 6 7 复制到 2 3 4的位置并覆盖
+		arr.copyWithin(6, 1, 7);
+
+
+
+
+
+	</script>
+</body>
+</html>

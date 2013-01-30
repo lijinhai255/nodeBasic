@@ -1,0 +1,10 @@
+/* pages/index/index.wxss */
+page {
+  text-align: center;
+  font-size: 30px;
+  background-color: #ccc;
+}
+.rect {
+  width: 750rpx;
+  height: 750rpx;
+}

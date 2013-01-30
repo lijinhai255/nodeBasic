@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="/web/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/web/css/common.css">
+	<link rel="stylesheet" href="/web/css/index.css">
+	<link rel="stylesheet" href="/web/css/nav.css">
+	<style type="text/css">
+
+
+	  
+		#roomList {}
+		#roomList li {
+			list-style: none;
+			border: 1px solid #ccc;
+		}
+		#roomList li .room-owner {
+			font-size: 30px;
+		}
+		#roomList li .room-body {
+			display: flex;
+			font-size: 20px;
+		}
+		#roomList li .room-body .players {
+			flex: 1;
+		}
+		#roomList li .room-body .players .player1 {}
+		#roomList li .room-body .players .player2 {}
+		#roomList li .room-body .join {
+			flex: 1;
+		}
+		#gameArea {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: rgba(0, 0, 0, .4);
+			display: flex;
+		}
+		#otherOne, #one {
+			flex: 1;
+			background-color: rgba(26, 54, 33, .7);
+			display: flex;
+			flex-direction: column;
+		}
+		#otherOne .row, #one .row {
+	      overflow: hidden;
+	      flex: 1;
+	      display: flex;
+	  }
+	  #otherOne .grid, #one .grid {
+	      border: 1px solid #ccc;
+	      box-sizing: border-box;
+	      flex: 1;
+	      background: no-repeat center;
+	      background-size: cover;
+	  }
+		
+	</style>
+</head>
+<body>
+	<% include ./components/header.ejs %>
+	<% include ./components/nav.ejs %>
+	<div class="container">
+		<div class="row">
+			<div class="create">
+				<span id="createRoom">创建房间</span>
+			</div>
+			<ul id="roomList" class="clearfix text-center">
+			</ul>
+		</div>
+	</div>
+	<div id="gameArea" class="hide">
+		<div id="one">
+			
+		</div>
+		<div id="otherOne">
+			
+		</div>
+	</div>
+
+	<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+	<script type="text/javascript" src="/web/js/jquery.min.js"></script>
+	<script src="/web/js/Food.js"></script>
+	<script src="/web/js/map.js"></script>
+	<script src="/web/js/Snake.js"></script>
+	<script src="/web/js/Block.js"></script>
+	<script src="/web/js/Game.js"></script>
+	<script type="text/javascript">
+		// 获取用户名
+		var username = "<%=username%>";
+		// 连接
+		var socket = io();
+		// 报道
+		socket.emit("baodao", {
+			username: username
+		});
+		// 获取元素
+		var $createRoom = $("#createRoom");
+		// 设置点击事件
+		$createRoom.click(function() {
+			// 创建房间
+			socket.emit("createRoom");
+		});
+
+		// 获取房间列表容器
+		var $roomList = $("#roomList");
+		// 监听渲染房间事件
+		socket.on("renderRoom", function(arr) {
+			// 清空原有的内容
+			$roomList.empty("");
+			// 循环上树
+			arr.forEach(function(value) {
+				$roomList.append(['<li class="col-lg-4">',
+				'	<div class="room-owner">' + value.roomOwner + '的房间</div>',
+				'	<div class="room-body">',
+				'		<div class="players">',
+				'			<div class="player1">',
+				'				' + value.playersArr[0].username + '',
+				'			</div>',
+				'			<div class="player2">',
+				'				' + (value.playersArr[1] ? value.playersArr[1] : "待加入" )+ '',
+				'			</div>',
+				'		</div>',
+				'		<div class="join">',
+				'			<span  data-room-id=' + value.roomID + '>加入</span>',
+				'		</div>',
+				'	</div>',
+				'</li>'].join(""));
+			});
+		});
+		// 委托模式添加点击事件 加入房间
+		$roomList.on("click", ".join span", function() {
+			// 获取元素身上的room-id
+			var roomID = $(this).data("room-id");
+			// 通知后台 当前用户 加入分组
+			socket.emit("joinGroup", roomID);
+		});
+
+		// 监听游戏开始事件
+		socket.on("gameStart", function(groupID) {
+			// 获取游戏区域
+			var $gameArea = $("#gameArea");
+			$gameArea.removeClass("hide");
+			// 获取第一个游戏的区域
+			var $one = $("#one");
+			// 获取第二个游戏的区域
+			var $otherOne = $("#otherOne");
+		  // 地图实例对象
+	    var map = new Map($one[0], 20, 20, 600, 600);
+	    var map1 = new Map($otherOne[0], 20, 20, 600, 600);
+	    // 定义蛇图片对象
+	    var snake_obj = {
+	        head_pic: ['/web/images/1.png', '/web/images/2.png', '/web/images/3.png', '/web/images/4.png'],
+	        body_pic: ['/web/images/5.png'],
+	        tail_pic: ['/web/images/6.png', '/web/images/7.png', '/web/images/8.png', '/web/images/9.png']
+	    };
+	    // 蛇实例
+	    var snake = new Snake(snake_obj);
+	    var snake1 = new Snake(snake_obj);
+	    // 食物实例
+	    var food = new Food(2, 6, '/web/images/food.jpg');
+	    var food1 = new Food(2, 6, '/web/images/food.jpg');
+	    // 障碍物实例
+	    var block = new Block('/web/images/block.png');
+	    // 初始化游戏
+	    var g = new Game(map, snake, food, block);
+	    var g1 = new Game(map1, snake1, food1, block);
+	    g.start(); 
+	    document.onkeydown = function (e) {
+	        e = e || window.event;
+	        var code = e.keyCode;
+	        //如果用户按下的是上下左右键，则调用小蛇的change转向方法
+	        if (code === 37 || code === 38 || code === 39 || code === 40) {
+	            g.snake.change(code);
+	            // 发送消息通知对方也更改这条蛇
+	            socket.emit("changeForward", {
+	            	groupID: groupID,
+	            	code: code
+	            });
+	        }
+	    }
+	    // 监听第二条蛇改变方向事件
+	    socket.on("secondChange", function(code) {
+	    	g1.snake.change(code);
+	    });
+	    g1.start();
+		});
+
+		
+	</script>
+</body>
+</html>

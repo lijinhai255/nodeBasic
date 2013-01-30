@@ -1,0 +1,27 @@
+div {
+  width: 100px;
+  height: 100px;
+  float: left;
+}
+/*色彩的定义*/
+.box1 {
+  background-color: pink;
+}
+.box2 {
+  background-color: #abc;
+}
+.box3 {
+  background-color: #abc7;
+}
+.box4 {
+  background-color: #000021;
+}
+.box5 {
+  background-color: rgba(88, 123, 255, 0.5);
+}
+.box6 {
+  background-color: hsl(180, 80%, 60%);
+}
+.box7 {
+  background-color: hsla(180, 80%, 60%, 0.6);
+}

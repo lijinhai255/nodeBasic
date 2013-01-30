@@ -1,0 +1,4 @@
+/* pages/image/image.wxss */
+image {
+ border: 1px solid #ccc;
+}

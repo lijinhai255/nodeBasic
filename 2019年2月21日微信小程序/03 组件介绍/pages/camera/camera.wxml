@@ -1,0 +1,2 @@
+<!--pages/camera/camera.wxml-->
+<camera device-position='front'></camera>

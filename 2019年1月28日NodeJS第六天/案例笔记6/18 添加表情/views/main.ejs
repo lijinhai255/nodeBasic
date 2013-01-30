@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="/web/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/web/css/nav.css">
+	<style type="text/css">
+		/* 公共样式start */
+		ul {
+			list-style: none;
+			padding: 0;
+		}
+		.ellipsis {
+			overflow: hidden;
+			text-overflow:ellipsis;
+			white-space: nowrap;
+		}
+		/* 公共样式end */
+		/* 内容start */
+		.nav-list {
+			font-size: 20px;
+		}
+		.nav-content-list {
+			font-size: 18px;
+		}
+		.nav-content-list .all-user-album-list {
+			padding-top: 10px;
+			border: 1px solid #ccc;
+			border-top: none;
+		}
+		.nav-content-list .all-user-album-list img {
+			max-width: 100%;
+			max-height: 100%;
+		}
+		.nav-content-list .all-user-album-list li {
+			height: 200px;
+			text-align: center;
+		}
+		.nav-content-list .all-user-album-list li .head-pic {
+			height: 150px;
+			line-height: 150px;
+		}
+		.nav-content-list .all-user-album-list li .username {
+			height: 50px;
+			line-height: 50px;
+		}
+		.nav-content-list .show-albums {
+			width: 100px;
+			margin: 0 auto;
+			font-size: 12px;
+			padding: 0;
+		}
+		.nav-content-list .show-albums li {
+			display: flex;
+			justify-content: space-between;
+		}
+		.nav-content-list .show-albums li span {
+
+		}
+		.nav-content-list .show-albums li button {
+
+		}
+		.nav-content-list .show-imgs img {
+			width: 100%;
+		}
+		.nav-content-list .show-imgs li {
+			position: relative;
+		}
+		.nav-content-list .show-imgs li button {
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+
+		#showImgs li {
+			position: relative;
+			height: 200px;
+			/*background-color: red;*/
+		}
+		#showImgs li input {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 20px;
+			height: 20px;
+			margin-left: -10px;
+			margin-top: -10px;
+		}
+		#showImgs li div {
+			height: 170px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		#showImgs li span {
+			display: block;
+			height: 30px;
+			text-align: center;
+			line-height: 30px;
+		}
+
+		/* 内容end */
+		
+
+		/* 聊天start */
+		#chat {
+
+		}
+		#chat .list {
+			border: 1px solid #ccc;
+			border-top: none;
+			height: 400px;
+		}
+		#chat .list > div {
+			height: 100%;
+		}
+		#chat .operate {
+			display: flex;
+			height: 60px;
+		}
+		#chat .operate input[type="text"] {
+			flex: 3;
+		}
+		#chat .operate input[type="button"] {
+			flex: 1;
+		}
+		#userList {
+			height: 100%;
+			overflow: auto;
+		}
+		#userList li {
+			padding: 0;
+			display: flex;
+			height: 50px;
+			line-height: 50px;
+			border-bottom: 1px solid #ccc;
+		}
+		#userList li span {
+			flex: 1;
+			text-align: center;
+
+		}
+
+		#userList li span img {
+			max-width: 60%;
+			max-height: 60%;
+		}
+		#wordList {
+			height: 400px;
+			overflow: auto;
+		}
+		#wordList li {}
+		/* 聊天end */
+
+		/* 表情start */
+		.face {
+			position: relative;
+		}
+		.face span {}
+		.face #faceList {
+			display: none;
+			position: absolute;
+			bottom: 100%;
+			left: 0;
+			width: 240px;
+			height: 216px;
+		}
+		.face #faceList li {
+			float: left;
+		}
+		/* 表情end */
+	</style>
+</head>
+<body>
+	<!-- 页头 -->
+	<% include ./components/header.ejs %>
+	<!-- 导航 -->
+	<% include ./components/nav.ejs %>
+	<!-- 内容 -->
+	<div id="content">
+		<div class="container">
+		  <div class="row">
+		  	<ul class="nav nav-tabs nav-list" role="tablist">
+		    <li role="presentation" class="active"><a href="#allAlbum" aria-controls="allAlbum" role="tab" data-toggle="tab">全部相册</a></li>
+		    <li role="presentation"><a href="#myAlbum" aria-controls="myAlbum" role="tab" data-toggle="tab">我的相册</a></li>
+		    <li role="presentation"><a href="#albumManage" aria-controls="albumManage" role="tab" data-toggle="tab">管理相册</a></li>
+		    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">设置</a></li>
+		    <li role="presentation"><a href="#chat" aria-controls="chat" role="tab" data-toggle="tab">聊天室</a></li>
+		  </ul>
+		  <div class="tab-content nav-content-list">
+		  	<!-- 全部相册 -->
+		    <div role="tabpanel" class="tab-pane active" id="allAlbum">
+		    	<!-- 既然是全部相册 所有的用户的名称应该显示在这里 -->
+		    	<ul id="allUserAlbumList" class="clearfix all-user-album-list">
+		    		<% for (var i = 0; i < allUserInfoArr.length; i++) { %>
+		    		<li class="col-lg-2">
+		    			<div class="head-pic">
+		    				<img src="<%=allUserInfoArr[i].head_pic%>" alt="">
+		    			</div>
+		    			<div class="username text-center">
+		    				<span><a href="/one_people_albums?target=<%=allUserInfoArr[i].username%>"><%=allUserInfoArr[i].username%></a></span>
+		    			</div>
+		    		</li>
+						<% } %>
+		    	</ul>
+		    </div>
+		    <div role="tabpanel" class="tab-pane" id="myAlbum">我的相册</div>
+		    <!-- 管理相册 -->
+		    <div role="tabpanel" class="tab-pane" id="albumManage">
+		    	<ul class="list-group">
+		    		<!-- 创建相册部分 -->
+					  <li class="list-group-item">
+							<h6 class="text-center">创建相册</h6>
+					  	<div class="input-group">
+					      <input type="text" id="createInp" class="form-control" placeholder="相册名称">
+					      <span class="input-group-btn">
+					        <button class="btn btn-default" id="createBtn" type="button">创建</button>
+					      </span>
+					    </div>
+					  </li>
+					  <li class="list-group-item">
+					  	<h6 class="text-center">上传图片</h6>
+					  	<div class="input-group">
+					      <select id="uploadSelect" class="form-control">
+					      	<% for (var i = 0; i < userAlbumArr.length; i++) { %>
+						  		<option value="<%=userAlbumArr[i].album_name%>"><%=userAlbumArr[i].album_name%></option>
+						  		<% } %>
+					      </select>
+					      <span class="input-group-btn">
+					        <button class="btn btn-default" disabled type="button">相册</button>
+					      </span>
+					    </div>
+					    <div class="input-group">
+					      <form id="uploadForm">
+					      	<input type="file" accept="image/*" id="uploadFile" name="file"  class="form-control" />
+					      </form>
+					      <span class="input-group-btn">
+					        <button class="btn btn-default" id="uploadBtn" type="button">上传</button>
+					      </span>
+					    </div>
+					  </li>
+					  <li class="list-group-item">
+					  	<h6 class="text-center">所有相册</h6>
+					  	<ul class="show-albums" id="albumList">
+					  		<% for (var i = 0; i < userAlbumArr.length; i++) { %>
+					  		<li data-album-name="<%=userAlbumArr[i].album_name%>">
+					  			<span  class="album-name"><%=userAlbumArr[i].album_name%></span>
+					  			<button type="button" class="close" aria-label="Close">
+					  				<span aria-hidden="true">&times;</span>
+					  			</button>
+					  		</li>
+					  		<% } %>
+					  	</ul>
+					  </li>
+					  <li class="list-group-item text-center">
+					  	<h6 class="text-center">展示图片</h6>
+					  	<ul class="clearfix show-imgs" id="showImgs">
+
+					  	</ul>
+					  </li>
+					
+					</ul>
+		    </div>
+		    <div role="tabpanel" class="tab-pane" id="settings">
+		    	<ul class="list-group">
+					  <li class="list-group-item">
+					    <h4 class="list-group-item-heading">修改密码</h4>
+					   	<div class="input-group">
+					   		  <input type="password" id="newPasswordInp" class="form-control" placeholder="新密码">
+						      <span class="input-group-btn">
+						        <button class="btn btn-default" id="newPasswordBtn" type="button">修改</button>
+						      </span>
+					   	</div>
+					  </li>
+					  <li class="list-group-item">
+					    <h4 class="list-group-item-heading">修改头像</h4>
+					   	<div class="input-group">
+					   		  <input type="file" id="newHeadPicInp" class="form-control">
+						      <span class="input-group-btn">
+						        <button class="btn btn-default" id="newHeadPicBtn" type="button">修改</button>
+						      </span>
+					   	</div>
+					  </li>
+					  <li class="list-group-item">
+					    <h4 class="list-group-item-heading">修改昵称</h4>
+					   	<div class="input-group">
+					   		  <input type="text" id="newNickNameInp" class="form-control">
+						      <span class="input-group-btn">
+						        <button class="btn btn-default" id="newNickNameBtn" type="button">修改</button>
+						      </span>
+					   	</div>
+					  </li>
+					</ul>
+		    </div>
+		    <!-- 聊天区域 -->
+		    <div role="tabpanel" class="tab-pane clearfix" id="chat">
+		    	<!-- 列表区域 -->
+		    	<div class="list">
+		    		<!-- 左侧 用户名列表 -->
+		    		<div class="col-lg-2">
+			    		<ul id="userList">
+			    			
+			    		</ul>
+			    	</div>
+			    	<!-- 右侧 发言列表 -->
+			    	<div class="col-lg-10">
+			    		<ul id="wordList">
+			    			
+			    		</ul>
+			    	</div>
+		    	</div>
+		    	<!-- 表情区域 -->
+		    	<div class="face">
+		    		<span>表情</span>
+		    		<ul id="faceList">
+		    			<% for (var i = 0; i < faceArr.length; i++) { %>
+		    			<li data-code="<%=faceArr[i].code%>"><img src="<%=faceArr[i].path%>" alt=""></li>
+		    			<% } %>
+		    		</ul>
+		    	</div>
+		    	<!-- 操作区域 -->
+		    	<div class="operate">
+		    		<input type="text" id="chatInp">
+		    		<input type="button" id="chatSend" value="发送">
+		    	</div>
+		    </div>
+		  </div>
+		  </div>
+		</div>
+	</div>
+	<!-- 重命名模态框 -->
+	<div class="modal fade" id="renameModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title">请输入新的图片名称</h4>
+	      </div>
+	      <div class="modal-body">
+	      	<form id="renameModalForm">
+	      		<input type="hidden" name="album_name" value="" >
+	      		<input type="hidden" name="img_name" value="" >
+	      		<!-- H5之前的type: text radio checkbox password button submit file hidden reset -->
+	      		<div class="form-group">
+	      			<input type="text" name="newImgName">
+	      		</div>
+	      		<div class="form-group">
+	      			<button type="button" id="renameModalFormBtn">确定修改</button>
+	      		</div>
+	      	</form>
+	      </div>
+	      <div class="modal-footer">
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<div class="modal fade" id="tipModal" tabindex="-1" role="dialog">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h4 class="modal-title text-center">提示信息</h4>
+	      </div>
+	      <div class="modal-body">
+	        <p id="tipModalContent"></p>
+	      </div>
+	      <div class="modal-footer">
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<script type="text/javascript" src="/web/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/web/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+	<script type="text/javascript" src="/web/sea.js"></script>
+	<script type="text/javascript">
+		
+		seajs.use("modules/main/main_main");
+	</script>	
+</body>
+</html>

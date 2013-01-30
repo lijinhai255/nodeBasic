@@ -1,0 +1,12 @@
+
+
+
+@for $i from 1 through 10 {
+	.box#{$i} {
+		width: 50px + $i * 100;
+		height: 100px;
+		background-color: red;
+	}
+}
+
+

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// 定义数组
+		var arr = ["a", "b", "c", "d", "e", "f", "g", "h"];
+		// 调用迭代器方法
+		var iterator = arr.entries();
+		console.log(iterator);
+		// 得到的是iterator迭代器对象 该对象可以调用next方法进行遍历
+		// 第一次遍历的结果
+		console.log(iterator.next());
+		// 第二次遍历的结果
+		console.log(iterator.next());
+		console.log(iterator.next());
+		console.log(iterator.next());
+		console.log(iterator.next());
+		console.log(iterator.next());
+		console.log(iterator.next());
+		console.log(iterator.next());
+		console.log(iterator.next());
+	</script>
+</body>
+</html>

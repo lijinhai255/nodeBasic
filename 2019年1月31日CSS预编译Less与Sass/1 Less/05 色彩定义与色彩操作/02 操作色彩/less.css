@@ -1,0 +1,29 @@
+div {
+  width: 100px;
+  height: 100px;
+  float: left;
+}
+/*色彩的定义*/
+/*操作色彩*/
+/*获取某一个颜色的对应通道*/
+.box1 {
+  background-color: #aa00ff;
+}
+/*将color1的透明度调整*/
+.box2 {
+  background-color: rgba(170, 187, 204, 0.56666667);
+  background-color: rgba(170, 187, 204, 0.36666667);
+  background-color: rgba(170, 187, 204, 0.5);
+}
+/*将color2的饱和度调高*/
+.box3 {
+  background-color: #aba51f;
+  background-color: #b5ae15;
+  background-color: #a19c29;
+}
+/*将color2的亮度调高*/
+.box4 {
+  background-color: #aba51f;
+  background-color: #dfd951;
+  background-color: #55520f;
+}

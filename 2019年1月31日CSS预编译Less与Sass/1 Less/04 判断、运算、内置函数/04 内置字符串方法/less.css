@@ -1,0 +1,18 @@
+.box:after {
+  content: ceil();
+  content: a%3D1;
+  content: "今天很冷";
+}
+.box {
+  width: 100px;
+  height: 100px;
+}
+.box:hover {
+  color: white;
+}
+.box .box1:hover {
+  color: orange;
+}
+.box:hover {
+  background-color: white;
+}

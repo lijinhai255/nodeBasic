@@ -1,0 +1,20 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/second/second",
+    "pages/third/third",
+    "pages/fouth/fouth"
+  ],
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "first"
+      },
+      {
+        "pagePath": "pages/second/second",
+        "text": "second"
+      }
+    ]
+  }
+}

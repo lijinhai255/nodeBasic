@@ -1,0 +1,13 @@
+@mixin hunhe($w:200px, $h:100px) {
+	width: $w;
+	height: $h;
+	background-color: red;
+}
+
+
+div {
+	@include hunhe(400px, 400px)
+}
+p {
+	@include hunhe();
+}

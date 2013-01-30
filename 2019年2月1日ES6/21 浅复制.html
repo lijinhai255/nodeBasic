@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript">
+		// 所谓的浅复制 指的是在复制 对象的时候 只复制对象的值类型数据 而不复制对象的引用类型数据。
+		var xiaoming = {
+			name: "小明",
+			age: 13,
+			sex: "男",
+			girlFriend: {
+				name: "小花",
+				age: 12,
+				sex: "女"
+			}
+		}
+
+		// 浅复制： 复制小明的一切
+		// var xiaoming1 = {};
+		// for (var i in xiaoming) {
+		// 	xiaoming1[i] = xiaoming[i];
+		// }
+		// console.log(xiaoming1);
+
+		// 深复制：真复制小明的一切
+		var result = $.extend(true, {}, xiaoming);
+		console.log(result);
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// 定义一个Symbol
+		var s1 = Symbol("fuhao1");
+		var s2 = Symbol("fuhao1");
+		console.log(s1 === s2);
+
+
+		// 定义相同的属性
+		var obj = {};
+		obj[s1] = 123;
+		obj[s2] = 123;
+		console.log(obj[s1]);
+		
+	</script>
+</body>
+</html>

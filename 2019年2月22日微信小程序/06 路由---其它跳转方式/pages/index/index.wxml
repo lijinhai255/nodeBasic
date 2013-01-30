@@ -1,0 +1,5 @@
+<!--pages/index/index.wxml-->
+<button>我是第一个页面</button>
+
+<!-- 通过组件跳转到second页面 -->
+<navigator url="/pages/second/second" open-type='switchTab'>跳转到第二个页面</navigator>

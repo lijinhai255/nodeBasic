@@ -1,0 +1,20 @@
+/*当宽度超过200px时，颜色使用红色 当宽度超过300px时 颜色使用蓝色*/
+p {
+  width: 100px;
+  height: 200px;
+  background-color: orange;
+  background-color: green;
+}
+div {
+  width: 201px;
+  height: 200px;
+  background-color: pink;
+  background-color: red;
+}
+section {
+  width: 301px;
+  height: 200px;
+  background-color: purple;
+  background-color: red;
+  background-color: blue;
+}

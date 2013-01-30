@@ -1,0 +1,30 @@
+<view id="addressPart">
+  <view class="choose">
+    <view>
+      <text>订单送至</text>
+      <text bindtap='chooseOtherAddress'>其它地址</text>
+      <text bindtap='chooseNewAddress'>新地址</text>
+    </view>
+    <view>{{addressStr}}</view>
+  </view>
+  <view class="getPhoneNumber">
+    <view class="button">
+      <button open-type='getPhoneNumber' bindgetphonenumber='getphonenumber' >获取电话</button>
+    </view>
+    <view>{{phoneNumber}}</view>
+  </view>
+</view>
+<view id="showPart">
+  <view  class="title">购买商品</view>
+  <view class="list">
+    <view wx:for="{{orderList}}" wx:key="{{this}}">
+      <image src="https://localhost:3001/item/{{item.img}}"></image>
+      <text class="product-title">{{item.title}}</text>
+      <text class="product-num">X{{item.num}}</text>
+      <text class="product-price">{{item.price}}</text>
+    </view>
+  </view>
+</view>
+<view id="buyPart">
+  <button bindtap='pay' >{{amount}}购买</button>
+</view>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// 定义一个明星
+		var star = {
+			name: "翟天临",
+			age: 30,
+			sex: "男",
+			education: "硕士"
+		}
+		// 代理 Proxy 该构造函数用于生成某一个对象的代理对象 
+		// var proxy = new Proxy(star, {
+		// 	get: function() {
+		// 	},
+		// 	set: function() {
+
+		// 	}
+		// });
+
+		// 通过代理对象访问明星的属性
+		// console.log(proxy.name); // 没有得到任何内容 这是因为没有设置get方法
+
+
+		var proxy = new Proxy(star, {
+			get: function(star, key) {
+				// 当通过proxy访问属性的时候 其实会执行get函数 
+				// console.log(arguments);
+				// 判定 
+				if (key === "education") {
+					return "博士后";
+				}
+				return star[key];
+			},
+			set: function(star, key, value) {
+				console.log(star, key, value);
+				if (key === "name") {
+					return;
+				}
+				star[key] = value;
+			}
+		});
+
+		// console.log(proxy.age);
+		// console.log(proxy.name);
+		// console.log(proxy.education);
+
+		// 通过代理对象进行设置属性时 其实是想要给star设置 此时会触发set方法 
+		proxy.single = true;
+
+		// 通过代理对象修改名称属性
+		proxy.name = "哈哈哈";
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+.box:after {
+	content: e("ceil()"); 
+	content: escape("a=1");
+	content: replace("今天很热", "热", "冷");
+}
+
+
+.box {
+	width: 100px;
+	height: 100px;
+	&:hover {
+		color: white;
+	}
+
+	.box1 {
+		&:hover {
+			color: orange;
+		}
+	}
+}
+.box:hover {
+	background-color: white;
+}
+

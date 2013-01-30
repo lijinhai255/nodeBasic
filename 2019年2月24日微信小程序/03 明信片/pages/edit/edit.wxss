@@ -1,0 +1,20 @@
+/* pages/edit/edit.wxss */
+page {
+  background-color: #f1f1f1;
+}
+page .infos  {
+  background-color: white;
+}
+page .infos view {
+  display:  flex;
+  margin: 0 30rpx;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+}
+textarea {
+  height: 60px;
+}
+button {
+  background-color:  #277CF0;
+  color: white;
+}

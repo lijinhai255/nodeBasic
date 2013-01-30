@@ -1,0 +1,34 @@
+.header-title {
+	text-align: right;
+}
+
+/* 注册表单start */
+#registForm .title {
+	font-size: 30px;
+	font-weight: 700;
+}
+#registForm {
+	box-sizing: border-box;
+	padding: 0 30px;
+	width: 500px;
+	margin: 0 auto;
+	border: 1px solid #0062cc;
+}
+#registForm input {
+	border-color: #0062cc;
+}
+#loginForm .title {
+	font-size: 30px;
+	font-weight: 700;
+}
+#loginForm {
+	box-sizing: border-box;
+	padding: 0 30px;
+	width: 500px;
+	margin: 0 auto;
+	border: 1px solid #0062cc;
+}
+#loginForm input {
+	border-color: #0062cc;
+}
+/* 注册表单end */

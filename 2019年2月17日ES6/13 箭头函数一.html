@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// 定义箭头函数 
+		var arrow = (a="你好1") => {
+			console.log(a + "，我是一个箭头函数");
+		}
+		// 执行函数
+		arrow();
+
+		// 参数默认值 
+		var fun = function(a=1) {
+			console.log(a);
+		}
+		fun();
+
+
+		// 将箭头函数当做构造函数使用
+		var a = new arrow();
+		
+	</script>
+</body>
+</html>

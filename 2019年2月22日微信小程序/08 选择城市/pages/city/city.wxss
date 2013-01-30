@@ -1,0 +1,24 @@
+/* pages/city/city.wxss */
+#chooseCity {
+  height: 50px;
+  line-height: 50px;
+  font-size: 30px;
+}
+.hot-city-list, .history-city-list {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.cityName {
+  width:30%;
+}
+
+#searchLetter {
+  position: fixed;
+  top: 50px;
+  right: 0;
+  width: 50px;
+  bottom: 0;
+  text-align: center;
+  background-color: white;
+}

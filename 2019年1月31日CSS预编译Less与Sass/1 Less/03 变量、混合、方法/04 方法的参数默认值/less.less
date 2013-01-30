@@ -1,0 +1,11 @@
+.box(@w:100px, @h:100px, @c:orange) {
+	width: @w;
+	height: @h;
+	background-color: @c;
+}
+p {
+	.box();
+}
+div {
+	.box(100px, 200px, blue);
+}

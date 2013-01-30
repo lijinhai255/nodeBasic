@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript" src="./jquery.min.js"></script>
+	<script type="text/javascript">
+		// 定义第一个Promise
+		function sendAjax1() {
+			// 返回一个Promise
+			return new Promise((resolve, reject) => {
+				// 发送ajax
+				$.ajax({
+					url: "/a",
+					data: "",
+					type: "get",
+					dataType: "json",
+					success: (data) => {
+						// 传递四个参数
+						resolve(data, 1111, 222, 33);
+					}
+				});
+			});
+		} 
+		// 定义第二个Promise
+		function sendAjax2(data) {
+			// 返回一个Promise
+			return new Promise((resolve, reject) => {
+				// 发送ajax
+				$.ajax({
+					url: "/b",
+					data: data,
+					type: "get",
+					dataType: "json",
+					success: (data) => {
+						resolve(data);
+					}
+				});
+			});
+		}
+		// 执行第一个
+		var p = sendAjax1();
+		// 绑定事件
+		p.then((data) => {
+			// 获取全部参数 发现只得到一个
+			console.log(data);
+			return sendAjax2(data);
+		}, () => {
+			console.log("failed");
+		})
+		.then((data) => {
+			console.log(data)
+		}, () => {
+			console.log("123")
+		})
+
+	</script>
+</body>
+</html>

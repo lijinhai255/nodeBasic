@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// 定义一个字符串
+		var str = "今天可以回家了";
+		// 定义一个开头字符串
+		var str1 = "可以";
+
+		// 检测str1在str中的哪个位置
+		// var result = str.startsWith(str1) // 此时检测的是是否str以str1开头 返回的结果是一个布尔值
+		// console.log(result); // false
+
+		// 检测str1是否在str的下标2位置
+		// var result1 = str.startsWith(str1, 2);
+		// console.log(result1); // true
+
+
+// 实现startsWith方法
+String.prototype.startsWith = function(str, pos) {
+	// 第一种方案 先以pos截取一个新的字符串 检测str是否在该新字符串的开头 indexOf
+	// var newStr = this.slice(pos);
+	// if (newStr.indexOf(str) === 0) {
+	// 	return true;
+	// }
+	// return false;
+
+	// 第二种方案 先以pos截取一个新的字符串 检测str是否在该字符串的开头 正则表达式
+	// var reg = new RegExp("^" + str);
+	// return reg.test(this.slice(pos));
+var reg = /\w+/;
+console.log(reg)
+var reg1 = new RegExp("\w+");
+console.log(reg1)
+}
+
+var result = str.startsWith(str1, 2) // 此时检测的是是否str以str1开头 返回的结果是一个布尔值
+console.log(result); // false
+	</script>
+</body>
+</html>

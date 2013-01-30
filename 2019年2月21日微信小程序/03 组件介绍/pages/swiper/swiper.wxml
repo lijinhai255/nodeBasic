@@ -1,0 +1,8 @@
+<swiper indicator-color='red' autoplay='true' interval='1000' indicator-dots='true' indicator-active-color='orange'>
+  <swiper-item>1</swiper-item>
+  <swiper-item>2</swiper-item>
+  <swiper-item>3</swiper-item>
+  <swiper-item>4</swiper-item>
+  <swiper-item>5</swiper-item>
+  <swiper-item>6</swiper-item>
+</swiper>

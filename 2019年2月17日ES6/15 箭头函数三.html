@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// 定义普通函数
+		// function fun() {
+		// 	console.log(this);
+		// }
+
+		// 给document绑定点击事件
+		// document.onclick = fun; // document
+		// 强行当做构造函数使用
+		// var f = new fun(); // this指向的是一个fun的实例
+		// var obj = {
+		// 	fun,
+		// 	a: "obj"
+		// }
+		// obj.fun(); // obj
+
+		// 定义一个箭头函数
+		var arrow = () => {
+			console.log(this);
+		}
+
+		arrow(); // window
+		document.onclick = arrow; // 当用户点击时 输出window
+		arrow.call(document.body); // window 
+		
+	</script>
+</body>
+</html>

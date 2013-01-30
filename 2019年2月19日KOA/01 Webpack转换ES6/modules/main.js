@@ -1,0 +1,1 @@
+require("./es6.es6");

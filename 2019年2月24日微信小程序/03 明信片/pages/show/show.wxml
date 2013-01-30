@@ -1,0 +1,46 @@
+<view id="part1">
+  <view class="info">
+    <view class="left">
+      <view class="top">
+        <view class="nickname">{{info.nickname}}</view>
+        <view class="job">{{info.job}}</view>
+      </view>
+      <view class="phoneNumber">{{info.phoneNumber}}</view>
+    </view>
+    <view class="right">
+      <view class="tail">{{info.tail}}</view>
+    </view>
+  </view>
+  <view class="office">{{info.office}}</view>
+  <view class="info-list">
+    <view>
+      <icon type='success'></icon> <text>{{info.address}}</text>
+    </view>
+    <view> 
+      <icon type='success'></icon> <text>{{info.email}}</text> 
+    </view>
+    <view> <icon type='success'></icon> <text>{{info.blog}}</text></view>
+  </view>
+</view>
+<view id="part2">
+  <view class="renqi">
+    <view> <icon type="warn"></icon> </view>
+    <view> 人气 5 </view>
+  </view>
+  <view class="shoucun">
+    <view> <icon type="warn"></icon> </view>
+    <view> 收存 1 </view>
+  </view>
+</view>
+<view id="part3">
+  <view class="sign">
+    个性签名
+  </view>
+  <view class="intro">
+    <textarea>{{info.intro}}</textarea>
+  </view>
+</view>
+<view id="part4">
+  <button bindtap='editCard'>编辑名片</button>
+  <button>删除名片</button>
+</view>

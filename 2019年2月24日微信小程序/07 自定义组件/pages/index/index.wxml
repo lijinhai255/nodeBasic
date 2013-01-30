@@ -1,0 +1,5 @@
+<module bindtulong="dragon" hello="{{a}}">
+<view>登录</view>
+<view>denglu1</view>
+</module>
+<button bindtap="change">改变自定义组件的属性值</button>

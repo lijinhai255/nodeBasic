@@ -1,0 +1,2 @@
+<button>我是第三个页面</button>
+<navigator url="/pages/fouth/fouth" open-type='redirectTo'>跳转到第四个页面</navigator>

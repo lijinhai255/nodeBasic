@@ -1,0 +1,2 @@
+<!--pages/index/index.wxml-->
+<navigator url="/pages/second/second" >跳到第二个页面</navigator>

@@ -1,0 +1,2 @@
+<button>我是第四个页面</button>
+<navigator open-type='navigateBack'>后退</navigator>

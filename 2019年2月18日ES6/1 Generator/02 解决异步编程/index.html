@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript" src="./jquery.min.js"></script>
+	<script type="text/javascript">
+		// // 使用原来的方式书写代码
+		// $.ajax({
+		// 	url: "/a",
+		// 	type: "get",
+		// 	data: "",
+		// 	dataType: "json",
+		// 	success: function() {
+		// 		console.log("发送第一个任务结束")
+		// 		$.ajax({
+		// 			url: "/b",
+		// 			type: "get",
+		// 			data: "",
+		// 			dataType: "json",
+		// 			success: function() {
+		// 				console.log("发送第二个任务结束")
+		// 			}
+		// 		})
+		// 	}
+		// })
+
+
+// 定义一个generator函数
+var gen = function * () {
+	// 定义第一个任务
+	yield taskOne();
+	// 定义第二个任务
+	yield taskTwo();
+}
+
+// 定义第一个任务
+function taskOne() {
+	$.ajax({
+		url: "/a",
+		type: "get",
+		data: "",
+		dataType: "json",
+		success: function() {
+			console.log("发送第一个任务结束");
+			g.next();
+		}
+	})
+}
+
+// 定义第二个任务
+function taskTwo() {
+	$.ajax({
+		url: "/b",
+		type: "get",
+		data: "",
+		dataType: "json",
+		success: function() {
+			console.log("发送第二个任务结束")
+			
+		}
+	})
+}
+
+
+// 获取迭代器对象
+var g = gen();
+g.next();
+
+	</script>
+</body>
+</html>

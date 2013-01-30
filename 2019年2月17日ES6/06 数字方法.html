@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// 所谓的数字方法指的是Number身上拓展出的一些新方法
+		// Number.isNaN   该方法只对数字进行判定 
+		// 之前也有一个window.isNaN  该方法的特点是会尽可能的将参数向数字类型转换 转换完毕之后的结果再进行判定是否是NaN
+		// var num1 = 0;
+		// var num2 = "0";
+		// var num3 = "oiasjdoiewaj";
+		// var num4 = NaN;
+
+		// window.isNaN
+		// console.log(window.isNaN(num1)); // false
+		// console.log(window.isNaN(num2)); // false
+		// console.log(window.isNaN(num3)); // true
+		// console.log(window.isNaN(num4)); // true
+
+		// Number.isNaN
+		// console.log(Number.isNaN(num1)); // false
+		// console.log(Number.isNaN(num2)); // false
+		// console.log(Number.isNaN(num3)); // false
+		// console.log(Number.isNaN(num4)); // true
+
+
+		// window.isFinite
+		// console.log(window.isFinite(num1)); // true
+		// console.log(window.isFinite(num2)); // true
+		// console.log(window.isFinite(num3)); // false
+		// console.log(window.isFinite(num4)); // false
+
+		// Number.isFinite
+		// console.log(Number.isFinite(num1)); // true
+		// console.log(Number.isFinite(num2)); // false
+		// console.log(Number.isFinite(num3)); // false
+		// console.log(Number.isFinite(num4)); // false
+
+
+// Number.isInteger
+var num1 = 1.3;
+var num2 = "1.0";
+var num3 = 3.0;
+var num4 = NaN;
+
+console.log(Number.isInteger(num1)); // false
+console.log(Number.isInteger(num2)); // false
+console.log(Number.isInteger(num3)); // true
+console.log(Number.isInteger(num4)); // false
+		
+		
+
+	</script>
+</body>
+</html>

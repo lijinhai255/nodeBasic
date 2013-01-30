@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+// 定义类
+class Student {
+	// 定义静态存取器方法
+	static set setAge(value) {
+		// console.log("设置静态属性");
+		this.age = value;
+	}
+	static get getAge() {
+		// console.log("获取静态属性");
+		return this.age;
+	}
+}
+
+// 先获取一次该属性的值
+console.log(Student.getAge);
+// 静态属性是给类使用的
+Student.setAge = 123;
+// 再获取一次该属性的值
+console.log(Student.getAge);
+	</script>
+</body>
+</html>

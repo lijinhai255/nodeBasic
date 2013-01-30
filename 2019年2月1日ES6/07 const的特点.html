@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// 此时a和对象的地址就是绑定死的关系
+		const A = {};
+		// 如果让a保存别的东西 此时会报错
+		// A = 123;
+		// 但是如果让A的地址添加什么内容 不会报错
+		A.a = 10;
+		console.log(A);
+		
+	</script>
+</body>
+</html>

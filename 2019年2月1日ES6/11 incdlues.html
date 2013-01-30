@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// 定义一个字符串
+		var str = "今天可以回家了";
+		// 定义一个开头字符串
+		var str1 = "回家";
+ 		
+ 		String.prototype.includes = function(str, pos) {
+ 			var newStr = this.slice(pos);
+ 			var reg = new RegExp(str);
+ 			return reg.test(newStr);
+ 		}
+
+ 		// 判定str是否包含str1
+ 		var result = str.includes(str1, 5);
+ 		console.log(result);
+	</script>
+</body>
+</html>

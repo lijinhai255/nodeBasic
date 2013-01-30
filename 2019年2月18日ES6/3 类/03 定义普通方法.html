@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+// 定义类
+class Student {
+	// 定义本类的构造函数
+	constructor (name, age, sex) {
+		this.name = name;
+		this.age = age;
+		this.sex = sex;
+	}
+	// 定义方法
+	sayHello() {
+		console.log("你好，我的名字是" + this.name + "我的年龄是" + this.age + "我的性别是" + this.sex); 
+	}
+}
+// 初始化
+var s = new Student("小明", 20, "男");
+console.log(s);
+		s.sayHello();
+	</script>
+</body>
+</html>

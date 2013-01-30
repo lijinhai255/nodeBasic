@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		form {
+			margin: 0 auto;
+			width: 500px;
+		}
+		form .item {
+			padding: 30px;
+			display: flex;
+		}
+		form .item * {
+			flex: 1;
+		}
+	</style>
+</head>
+<body>
+	<form action="/upload" method="post" enctype="multipart/form-data">
+		<div class="item">
+			<label for="">文件名</label>
+			<input type="text" name="filename">
+		</div>
+		<div class="item">
+			<label for="">选择文件</label>
+			<input type="file" name="file">
+		</div>
+		<div class="item">
+			<button>提交</button>
+		</div>
+	</form>
+</body>
+</html>

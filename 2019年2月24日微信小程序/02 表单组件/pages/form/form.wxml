@@ -1,0 +1,33 @@
+<form bindsubmit='submit'> 
+  <view>
+    <label>输入内容</label><input type='text' confirm-type='go'></input>
+  </view>
+  <view>
+    <checkbox-group>
+      <checkbox value=''>你好</checkbox>
+      <checkbox value=''>你好</checkbox>
+      <checkbox value=''>你好</checkbox>
+      <checkbox value=''>你好</checkbox>
+      <checkbox value=''>你好</checkbox>
+      <checkbox value=''>你好</checkbox>
+      <checkbox value=''>你好</checkbox>
+    </checkbox-group>
+  </view>
+  <view>
+  <radio-group name="sex">
+    <radio value="男">男</radio>
+    <radio value="女">女</radio>
+  </radio-group> 
+  </view>
+  <view>
+    <textarea name="intro" ></textarea>
+  </view>
+<view>
+  <button type='warn' form-type='submit'>我是一个按钮</button>
+</view>
+<view>
+  <switch bindchange='change' disabled>
+  
+  </switch>
+</view>
+</form>

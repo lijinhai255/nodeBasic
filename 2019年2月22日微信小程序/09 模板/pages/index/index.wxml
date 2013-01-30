@@ -1,0 +1,12 @@
+<import src="./template1.wxml"/>
+
+<template is="a"></template> 
+<template is="a"></template> 
+<template is="a"></template> 
+<template is="a"></template> 
+<template is="a"></template> 
+<template is="a"></template> 
+<template is="a"></template> 
+<template is="a"></template> 
+
+<include src="./template.wxml" />

@@ -1,0 +1,13 @@
+{
+  "pages": [
+    "pages/chooseAddress/chooseAddress",
+    "pages/requestPayment/requestPayment",
+    "pages/getWeRunData/getWeRunData",
+    "pages/chooseImage/chooseImage",
+    "pages/uploadFile/uploadFile",
+    "pages/chooseLocation/chooseLocation",
+    "pages/getLocation/getLocation",
+    "pages/openLocation/openLocation"
+  ]
+
+}

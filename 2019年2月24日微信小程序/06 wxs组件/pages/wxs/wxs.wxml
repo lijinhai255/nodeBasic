@@ -1,0 +1,7 @@
+<wxs module="ickt">
+  function toUpperCase(str) {
+    return str.toUpperCase();
+  }
+  module.exports.toUpperCase = toUpperCase;
+</wxs>
+<text>{{ickt.toUpperCase(str)}}</text>

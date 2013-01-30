@@ -1,0 +1,12 @@
+<!--pages/text/text.wxml-->
+<!-- <text class="small" space='nbsp'>aaaa    ssss    </text> -->
+<view></view>
+<text>你好你好你好</text>
+<view></view>
+<text space="emsp"> 好你好你好</text>
+<view></view>
+<text selectable='true' space="ensp">  好你好你好</text>
+<!-- 转义 -->
+<view>
+  <text decode="true">&gt;你好&lt;</text>
+</view>

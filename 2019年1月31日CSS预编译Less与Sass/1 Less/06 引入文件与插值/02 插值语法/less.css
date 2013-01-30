@@ -1,0 +1,6 @@
+/*定义变量*/
+.left {
+  width: 100px;
+  float: left;
+  border-left: 1px solid #ccc;
+}

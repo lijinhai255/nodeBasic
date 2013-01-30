@@ -1,0 +1,111 @@
+#header {
+  background-color: #FF8800;
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+#header .image {
+  flex: 1;
+}
+#header .image image {
+  width: 122rpx;
+  height: 122rpx;
+}
+#header .text {
+  flex: 2;
+  font-size: 18px;
+  color: white;
+}
+#header .text .title {
+  width: 50%;
+  line-height: 18px;
+  padding-bottom: 10px;
+}
+#header .text .intro {
+  font-size: 14px;
+  line-height: 14px;
+}
+#content {
+  display: flex;
+}
+#content .menu {
+  flex: 1;
+  text-align: center;
+  background-color: #EBEDF0;
+  color: #666666;
+}
+#content .scroll {
+  flex: 2;
+}
+#content .scroll .item {
+  display: flex;
+  position: relative;
+}
+#content .scroll .item .product-img {
+  flex: 1;
+}
+#content .scroll .item .product-img image {
+  width: 100%;
+  height: 100%;
+}
+#content .scroll .item .product-info {
+  flex: 2;
+}
+#content .scroll .item .product-info .product-saled {
+  font-size: 12px;
+  color: gray;
+}
+#content .scroll .item .product-info .product-price {
+  color: red;
+}
+#content .scroll .item .operate {
+  position: absolute;
+  right: 40rpx;
+  bottom: 0;
+  width: 150rpx;
+  height: 50rpx;
+  text-align: center;
+  line-height: 50rpx;
+}
+#content .scroll .item .operate .minus, #content .scroll .item .operate .plus {
+  color: red;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  line-height: 45rpx;
+  box-sizing: border-box;
+}
+#content .scroll .item .operate .number {
+  width: 50rpx;
+  float: left;
+  box-sizing: border-box;
+}
+#content .scroll .item .operate .minus {
+  float: left;
+  width: 50rpx;
+  height: 50rpx;
+  box-sizing: border-box;
+}
+#content .scroll .item .operate .plus {
+  float: right;
+  width: 50rpx;
+  height: 50rpx;
+}
+#footer {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  color: white;
+}
+#footer view {
+  flex: 3;
+  background-color: #484D54;
+}
+#footer .ok {
+  flex: 2;
+  background-color: #FE2947;
+}

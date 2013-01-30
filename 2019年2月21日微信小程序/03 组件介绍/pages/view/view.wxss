@@ -1,0 +1,10 @@
+/* pages/view/view.wxss */
+.red {
+  color: red;
+}
+.h1 {
+  font-size: 21px;
+}
+.blue {
+  color: blue;
+}

@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "biaodan": "/components/model/model"
+  }
+}

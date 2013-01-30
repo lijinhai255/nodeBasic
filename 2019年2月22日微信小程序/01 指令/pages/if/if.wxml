@@ -1,0 +1,3 @@
+<!--pages/if/if.wxml-->
+<text wx:if="{{show}}">pages/if/if.wxml</text>
+<button bindtap="toggle">toggle</button>

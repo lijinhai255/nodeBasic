@@ -1,0 +1,9 @@
+<!--pages/for/for.wxml-->
+<!-- <view wx:for="{{obj}}" >
+  <text wx:for="{{arr}}" >{{index + item}}</text>
+</view> -->
+
+
+<view wx:key="{{this}}" wx:for="{{obj}}" wx:for-index="a" wx:for-item="b" >
+  <text wx:key="{{this}}" wx:for="{{arr}}" >{{a + b}}</text>
+</view>

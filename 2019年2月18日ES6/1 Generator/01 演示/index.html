@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// 定义一个状态函数
+		var generator = function * () {
+			// 定义第1段代码
+			console.log(1);
+			yield "a";
+			// 定义第2段代码
+			console.log(2);
+			yield "b";
+			// 定义第3段代码
+			console.log(3);
+			yield "c";
+			// 定义第4段代码
+			console.log(4);
+			yield "d";
+			// 定义第5段代码
+			console.log(5);
+			yield "e";
+			// 定义第6段代码
+			console.log(6);
+			yield "f";
+			// 定义第7段代码
+			console.log(7);
+			yield "g";
+			// 定义第8段代码
+			console.log(8);
+			yield "h";
+		}
+		// var g = new generator(); // 不可以使用new去调用
+		// 执行generator 得到一个迭代器
+		var g = generator();
+		console.log(g);
+		// 绑定点击事件 每点击一次 就会执行一次g.next() 就会执行一段函数中的代码
+		document.onclick = function() {
+			console.log(g.next());
+		}
+	</script>
+</body>
+</html>

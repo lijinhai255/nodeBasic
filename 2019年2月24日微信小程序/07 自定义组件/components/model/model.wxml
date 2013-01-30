@@ -1,0 +1,17 @@
+<!-- <view bindtap="click" hidden="{{hello}}">你好，我是一个自定义组件 {{username}}</view> -->
+
+
+<!-- 假如当前是一个表单 被两个页面引入 在A页面中 希望头部是显示“登录” 在B页面中 希望头部显示“注册” -->
+<!-- 此时我们需要预留内容 留给使用者去定义 -->
+<form>
+  <view>哈哈哈哈哈哈</view>
+  <view class="title">
+    <slot></slot>
+  </view>
+  <view>
+    <label>用户名</label><input type="text" placeholder='请输入用户名'></input>
+  </view>
+  <view>
+    <button>go</button>
+  </view>
+</form>

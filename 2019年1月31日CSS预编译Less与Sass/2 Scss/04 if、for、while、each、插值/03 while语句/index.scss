@@ -1,0 +1,7 @@
+$a: 1;
+@while $a < 13 {
+	.col-lg-#{$a} {
+		width: percentage($a/12);
+	}
+	$a: $a + 1;
+} 

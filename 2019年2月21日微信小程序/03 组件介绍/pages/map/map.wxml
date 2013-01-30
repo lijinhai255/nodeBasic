@@ -1,0 +1,2 @@
+<!--pages/map/map.wxml-->
+<map longitude='116.3832502505' latitude='40.10367327010' scale='18'></map>

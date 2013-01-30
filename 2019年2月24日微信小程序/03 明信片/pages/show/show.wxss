@@ -1,0 +1,92 @@
+page {
+  background-color: #F1F1F1;
+}
+#part1 {
+  background-color: white;
+  margin: 32rpx;
+  border-radius: 5px;
+  padding: 40rpx;
+}
+#part1 .info {
+  height: 75px;
+  display: flex;
+}
+#part1 .info .left {
+  flex: 3;
+ 
+}
+#part1 .info .left .top {
+  display: flex;
+  align-items: baseline;
+}
+#part1 .info .left .top .nickname {
+  font-size: 30px;
+  line-height: 30px;
+}
+
+#part1 .info .left .phoneNumber {
+  line-height: 20px;
+  padding-top: 25px;
+  height: 20px;
+  font-size: 20px;
+  color: blue;
+}
+#part1 .info .right {
+  flex: 1;
+}
+#part1 .info .right .tail {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  line-height: 75px;
+  background-color: orange;
+  color: white;
+  text-align: center;
+  font-size: 25px;
+}
+#part1 .office {
+  line-height: 30px;
+}
+#part1 .info-list view{
+  display: flex;
+  align-items: center;
+}
+#part1 .info-list view text {
+  padding-left: 10px;
+}
+#part2 {
+  display: flex;
+  background-color: white;
+  text-align: center;
+  padding: 10px 0;
+}
+#part2 .renqi {
+  flex: 1;
+}
+#part2 .shoucun {
+  flex: 1;
+}
+#part3 {
+  margin-top: 10px;
+ 
+}
+#part3 .sign {
+  margin-left: 10px;
+  border-left: 10px solid #277CF0;
+  padding-left: 4px;
+  margin-bottom: 4px;
+}
+#part3 .intro {
+   background-color: white;
+}
+#part3 .intro textarea {
+  height: 40px;
+}
+#part4 {
+  display: flex;
+}
+#part4 button {
+  width: 45%;
+  color: white;
+  background-color: #277CF0;
+}

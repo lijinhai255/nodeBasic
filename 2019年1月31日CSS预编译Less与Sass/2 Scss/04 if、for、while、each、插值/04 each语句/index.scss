@@ -1,0 +1,6 @@
+$enum: "a", "b", "c", "d";
+@each $index in $enum {
+	.box-#{$index} {
+		width: 100%;
+	}
+}

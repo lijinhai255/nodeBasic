@@ -1,0 +1,43 @@
+<scroll-view style="height:400px" scroll-y scroll-into-view="three">
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view id="two">2</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view id="three">3</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+
+</scroll-view>

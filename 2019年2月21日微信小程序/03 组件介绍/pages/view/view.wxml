@@ -1,0 +1,4 @@
+<view hover-class='red h1' hover-stay-time='3000' hover-start-time="3000">
+  我是一个view组件
+  <view hover-class="blue">我是一个view子组件</view>
+</view>

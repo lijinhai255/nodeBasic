@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript" src="./jquery.min.js"></script>
+	<script type="text/javascript">
+		// Promise是一个构造函数
+		// 接收一个函数作为参数 通常该函数中必须要有异步代码
+		var p = new Promise(function(resolve, reject) {
+			// 发出ajax请求
+			$.ajax({
+				url: "/a",
+				dataType: "json",
+				success: function(data) {
+					// 在回调函数中 我们可以根据返回的数据的error属性判定这是一个成功的请求还是一个失败的请求
+					if (!data.error) {
+						// 这是一个成功的请求 就执行resolve
+						reject();
+					} else {
+						// 这是一个失败的请求 就执行reject
+						// reject();
+					}
+				}
+			});
+		});
+
+		// 为了处理回调函数中的内容 p对象提供了then方法用于监听Promise中异步代码的执行情况
+		p.then(function() {
+			console.log("成功");
+		}, function() {
+			console.log("失败");
+		});
+
+
+	</script>
+</body>
+</html>

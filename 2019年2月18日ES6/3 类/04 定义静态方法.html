@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// 定义类
+		class Student {
+			// 定义静态方法
+			static hi() {
+				console.log("你好");
+			}
+			// 定义普通方法
+			hello() {}
+		}
+		// 调用静态方法
+		Student.hi();
+
+
+
+
+		// 定义静态方法等价于 
+		// function Student() {
+		// }
+		// Student.hi = function() {
+		// }
+
+		// 定义普通方法等价于
+		// Student.prototype.hello = function() {
+		// }
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+<form>
+  <view>
+    <label>你好</label><input type="input"></input>
+  </view>
+  <button>你好啊</button>
+</form>

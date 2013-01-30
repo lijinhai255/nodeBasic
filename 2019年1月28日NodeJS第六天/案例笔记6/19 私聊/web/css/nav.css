@@ -1,0 +1,23 @@
+/* 导航start */
+	#nav .user-info {
+		display: flex;
+		align-items: center;
+	}
+	#nav .user-info .username {
+		padding: 20px;
+	}
+	#nav .user-info .head-pic {
+		height: 60px;
+		line-height: 60px;
+	}
+	#nav .user-info .exit {
+		padding: 0 20px;
+	}
+	#nav .user-info a {
+		color: white;
+	}
+	#nav .user-info .head-pic a img {
+		height: 80%;
+	}
+
+/* 导航end */

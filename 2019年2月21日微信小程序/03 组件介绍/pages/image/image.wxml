@@ -1,0 +1,2 @@
+<!--pages/image/image.wxml-->
+<image mode="widthFix" src="https://www.baidu.com/img/bd_logo1.png?where=super"></image>

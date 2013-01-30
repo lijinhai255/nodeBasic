@@ -1,0 +1,16 @@
+{
+  "pages": [
+    "pages/camera/camera",
+    "pages/video/video",
+    "pages/audio/audio",
+    "pages/moveable/movable",
+    "pages/swiper/swiper",
+    "pages/scrollView/scrollView",
+    "pages/map/map",
+    "pages/image/image",
+    "pages/icon/icon",
+    "pages/richtext/richtext",
+    "pages/text/text",
+    "pages/view/view"
+  ]
+}

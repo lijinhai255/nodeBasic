@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// 定义一个数组
+		var arr = ["张三", "李四", "王五", "赵六"];
+
+		// 还原
+		Array.prototype.find = function(handler) {
+			// 循环执行函数 并把成员和索引传递进去
+			for (var i = 0; i < this.length; i++) {
+				// 获取函数的执行结果
+				var result = handler(this[i], i);
+				// 如果为true 就说明找到了 不需要再继续循环 
+				if (result === true) {
+					// 返回当前成员
+					return this[i];
+				}
+			}
+		}
+
+		// 查询数组中第一个带字符串“四”的成员 
+		var username = arr.find(function(value, index) {
+			console.log(value, index);
+			return value.includes("四");
+		});
+	</script>
+</body>
+</html>

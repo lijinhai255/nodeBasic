@@ -1,0 +1,27 @@
+.box(@w, @h, @c) {
+	width: @w;
+	height: @h;
+	background-color: @c;
+}
+
+
+/*当宽度超过200px时，颜色使用红色 当宽度超过300px时 颜色使用蓝色*/
+.box(@w, @h, @c) when(@w > 200px)  {
+	background-color: red;
+}
+.box(@w, @h, @c) when(@w < 200px)  {
+	background-color: green;
+}
+.box(@w, @h, @c) when(@w > 300px) {
+	background-color: blue;
+}
+
+p {
+	.box(100px, 200px, orange);
+}
+div {
+	.box(201px, 200px, pink);
+}
+section {
+	.box(301px, 200px, purple);
+}

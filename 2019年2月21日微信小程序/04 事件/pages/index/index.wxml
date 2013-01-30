@@ -1,0 +1,4 @@
+<!--pages/index/index.wxml-->
+<view data-age="33" id="dad" bindtap='tap1'>
+  <text data-name="haha" id="son" bindtap='tap'>pages/index/index.wxml</text>
+</view>

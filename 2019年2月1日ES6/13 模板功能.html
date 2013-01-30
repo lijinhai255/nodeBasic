@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul id="list"></ul>
+	<script type="text/javascript">
+// 定义一个数组
+var arr = [
+	{username: "wanglao1"},
+	{username: "wanglao2"},
+	{username: "wanglao3"},
+	{username: "wanglao4"},
+	{username: "wanglao5"},
+	{username: "wanglao6"},
+	{username: "wanglao7"}
+];
+
+// 将arr中的每一项的内容上树
+var list = document.getElementById("list");
+// 循环数组 并上树
+for (var i = 0; i < arr.length; i++) {
+	// 如果是之前
+	// var li = "<li><span>姓名:</span><span>" + arr[i].username + "</span></li>";
+	// 现在有了多行字符串模板功能
+	var li = `<li><span>姓名:</span><span>${arr[i].username.toUpperCase() + 1}</span></li>`;
+	list.innerHTML += li;
+}
+	</script>
+</body>
+</html>

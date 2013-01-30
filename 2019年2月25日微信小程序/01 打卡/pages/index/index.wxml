@@ -1,0 +1,1 @@
+<button type="primary" bindtap="signin">打卡</button>

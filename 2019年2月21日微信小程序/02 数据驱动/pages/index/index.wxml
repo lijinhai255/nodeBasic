@@ -1,0 +1,2 @@
+<view>{{title}}</view>
+<view>{{student.username}}</view>

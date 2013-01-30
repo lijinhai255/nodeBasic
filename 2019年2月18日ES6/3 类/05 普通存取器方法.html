@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+// 定义类
+class Student {
+	// 定义构造函数
+	constructor(name, age, sex) {
+		this.name = name;
+		this.age = age;
+		this.sex = sex;
+	}
+	// 定义存取器方法
+	get getName() {
+		return this.name;
+	}
+	set setName(value) {
+		console.log("123");
+		this.name = value;
+	}
+}
+
+		var s = new Student("xiaobai", 13, "男");
+
+		console.log(s.getName);
+		s.setName = "sadf";
+	</script>
+</body>
+</html>

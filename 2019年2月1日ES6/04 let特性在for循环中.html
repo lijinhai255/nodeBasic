@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		li {
+			height: 20px;
+			border-bottom: 1px solid #ccc;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	<script type="text/javascript">
+		// 得到元素
+		var lis = document.getElementsByTagName("li"); 
+		// 给每一个元素绑定事件
+		// for (var i = 0; i < lis.length; i++) {
+		// 	lis[i].onclick = function() {
+		// 		console.log(i);
+		// 	}
+		// }
+
+		for (let i = 0; i < lis.length; i++) {
+			lis[i].onclick = function() {
+				console.log(i);
+			}
+		}
+	</script>
+</body>
+</html>

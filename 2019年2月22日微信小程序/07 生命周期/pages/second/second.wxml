@@ -1,0 +1,3 @@
+<!--pages/second/second.wxml-->
+<text>pages/second/second.wxml</text>
+<navigator open-type='navigateBack'>回退到第一个页面</navigator>

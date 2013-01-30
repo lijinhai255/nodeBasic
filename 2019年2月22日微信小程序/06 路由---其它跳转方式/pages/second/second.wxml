@@ -1,0 +1,2 @@
+<button>我是第二个页面</button>
+<navigator url="/pages/third/third" open-type="navigateTo">跳转到第三个页面</navigator>

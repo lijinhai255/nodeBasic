@@ -1,0 +1,47 @@
+<view id="header">
+  <view class="image">
+    <image src="https://localhost:3001/logo.png"></image>
+  </view>
+  <view class="text">
+    <view class="title">订餐</view>
+    <view class="intro">起送￥20|配送5￥|送达30分钟</view>
+  </view>
+</view>
+
+<view id="content">
+  <view class="menu">
+    <view wx:for="{{list}}" bindtap="chooseCategory" data-target="ickt{{item.id}}" style="height: {{height / list.length}}px; line-height: {{height/list.length}}px" wx:key="{{this}}">
+      {{item.text}}
+    </view>
+  </view>
+  <!-- 右侧的滚动区域 -->
+  <scroll-view class="scroll" style="height:{{height}}px" scroll-y scroll-into-view="{{target}}">
+    <!-- 每一个分类的区域 -->
+    <view id="ickt{{value.id}}" wx:for="{{list}}" wx:key="{{this}}" wx:for-item="value">
+      <!-- 每一个分类的具体单品 -->
+      <view class="item" wx:for="{{value.data}}" wx:key="{{this}}">
+         <view class="product-img">
+          <image src="https://localhost:3001/item/{{item.img}}"></image>
+         </view>
+         <view class="product-info">
+            <view class="product-name">{{item.title}}</view>
+            <view class="product-saled">已售{{item.sales}}份</view>
+            <view class="product-price">￥{{item.price}}</view>
+         </view>
+         <!-- 加与减 -->
+         <view class="operate">
+            <block wx:if="{{item.num}}">
+              <view catchtap="minus" data-category="{{value.id}}" data-productid="{{item.id}}"  class="minus">-</view>
+              <view class="number">{{item.num}}</view>
+            </block>
+            <view catchtap='plus' data-category="{{value.id}}" data-productid="{{item.id}}"  class="plus">+</view>
+         </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+
+<view id="footer">
+  <view>共{{amount}}元</view>
+  <view class="ok" catchtap='ok'>选好了</view>
+</view>

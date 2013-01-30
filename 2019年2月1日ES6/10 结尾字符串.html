@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// 定义一个字符串
+		var str = "今天可以回家了";
+		// 定义一个开头字符串
+		var str1 = "回家";
+ 		
+ 		// 还原
+ 		String.prototype.endsWith = function(str, pos) {
+ 			// 截取一个新字符串
+ 			var newStr = this.slice(0, pos);
+ 			// 生成正则表达式
+ 			var reg = new RegExp( str + "$");
+ 			return reg.test(newStr);
+ 		}
+
+
+ 		// 判定 str是否是以str1结尾
+ 		var result = str.endsWith(str1, 5);
+ 		console.log(result);
+	</script>
+</body>
+</html>

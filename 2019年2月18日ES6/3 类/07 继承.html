@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// 定义父类
+		class People {
+			constructor(name, age, sex) {
+				this.name = name;
+				this.age = age;
+				this.sex = sex;
+			}
+			sayHello() {
+				console.log(this.name);
+			}
+			static hi() {
+				console.log("hi");
+			}
+			get getName() {
+				return this.name;
+			}
+			set setName(value) {
+				this.name = value;
+			}
+			static get getAge() {
+				return this.age;
+			}
+			static set setAge(value) {
+				this.age = value;
+			}
+		}
+		// 定义子类
+		class Student extends People {
+			constructor(name, age, sex, grade) {
+				// 构造函数式继承
+				super(name, age, sex);
+				// 赋值自己的特有属性
+				this.grade = grade;
+			}
+		}
+
+
+		var s = new Student("小明", 12, "男", 6);
+		
+	</script>
+</body>
+</html>

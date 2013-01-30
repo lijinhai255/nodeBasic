@@ -1,0 +1,4 @@
+<view>
+  <text>{{direction}}</text>
+</view>
+<image style="transition: all .1s ease 0s; transform: rotate({{-angle}}deg)" class="rect" src="../../compass.png"></image>

@@ -1,0 +1,23 @@
+/* if语句 */
+@mixin box($w, $h) {
+	width: $w;
+	height: $h;
+	/*判断 $w的宽度和$h的高度 从而决定color的颜色*/
+	@if $w > 100px {
+		background-color: red;
+	} @else if $w > 50px {
+		background-color: blue;
+	} @else {
+		background-color: purple;
+	}
+}
+
+.box {
+	@include box(200px, 200px);
+}
+.box1 {
+	@include box(75px, 100px);
+}
+.box2 {
+	@include box(25px, 25px);
+}

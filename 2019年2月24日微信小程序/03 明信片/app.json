@@ -1,0 +1,31 @@
+{
+  "pages": [
+    "pages/show/show",
+    "pages/cards/cards",
+    "pages/edit/edit"
+    
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "小程序",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "list": [{
+        "pagePath": "pages/show/show",
+        "text": "展示名片",
+        "iconPath": "/icons/friends_normal.png",
+        "selectedIconPath": "/icons/friends_active.png"
+      }, {
+        "pagePath": "pages/cards/cards",
+        "text": "名片夹",
+        "iconPath": "/icons/discovery_normal.png",
+        "selectedIconPath": "/icons/discovery_active.png"
+      }]
+  }
+
+
+}

@@ -1,0 +1,4 @@
+<!--pages/richtext/richtext.wxml-->
+<!-- <rich-text nodes="<div class='red'>你好</div>"></rich-text> -->
+
+<rich-text nodes="{{arr}}"></rich-text>

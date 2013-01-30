@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="/web/css/bootstrap.min.css">
+	<style type="text/css">
+		/* 公共样式start */
+		ul {
+			list-style: none;
+			padding: 0;
+		}
+		
+		/* 公共样式end */
+		.all-user-album-list {
+
+		}
+		.all-user-album-list li {
+			height: 200px;
+			text-align: center;
+		}
+		.all-user-album-list li img {
+			width: 80%;
+		}
+	</style>
+</head>
+<body>
+	<!-- 页头 -->
+	<% include ./components/header.ejs %>
+
+	<div class="container">
+		<div class="row">
+			<nav>这是<%=target%>的<%=album_name%>相册</nav>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div role="tabpanel" class="tab-pane active" id="allAlbum">
+		  	<!-- 既然是全部相册内容 所有的图片的名称应该显示在这里 -->
+		  	<ul id="allUserImgList" class="clearfix all-user-album-list">
+		  		<% for (var i = 0; i < imgArr.length; i++) { %>
+		  		<li class="col-lg-2">
+		  			<div class="head-pic">
+		  				<img src="<%=imgArr[i]%>" alt="">
+		  			</div>
+		  			<div class="username text-center">
+		  				<span><a><%=arr[i].img_name%></a></span>
+		  			</div>
+		  		</li>
+					<% } %>
+		  	</ul>
+		  </div>
+		</div>
+	</div>
+  <script type="text/javascript" src="/web/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/web/js/bootstrap.min.js"></script>
+</body>
+</html>

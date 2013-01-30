@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// 定义WeakSet
+		var ws = new WeakSet([{}, {}, {}]);
+		// 注：垃圾回收机制 不将WeakSet考虑在内 工作中慎用
+		
+
+
+		// 垃圾回收机制
+		// var a = {}; // 此时 定义一个变量 接着 开辟了一个内存生成了一个对象 接着将对象的地址交给变量去保存。
+
+		// 3秒之后 将a变量指向其它地方 此时 {} 就没有变量来保存了。 而且也无法得到 此时{}就属于“垃圾”的范畴
+		// 此时应当被垃圾回收机制清除  
+		// 注：如果无法被回收就属于内存泄露
+		// setTimeout(function() {
+		// 	a = 12;
+		// 	console.log(a); 
+		// }, 3000);
+	
+
+
+	</script>
+</body>
+</html>
